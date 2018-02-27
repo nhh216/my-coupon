@@ -14,5 +14,5 @@ Route::get('/',function (){
 //Route::get('/test','HomeController.php@homepage');
 
 Route::group(['namespace' => 'Frontend\Controllers', 'prefix' => '/', 'middleware' => ['web'] ], function () {
-    Route::get('/test','HomeController@homepage');
+    Route::get('/','HomeController@home');
 });

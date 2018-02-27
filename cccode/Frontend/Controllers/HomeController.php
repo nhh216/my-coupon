@@ -9,11 +9,24 @@
 namespace Frontend\Controllers;
 use App\Http\Controllers\Controller;
 use Frontend\Models\Category;
+use Frontend\Models\Site;
+use Frontend\Models\Coupon;
 
 class HomeController extends  Controller
 {
-    public function homepage()
+
+    protected $categories;
+    public function __construct()
     {
-        echo "goi den day roi";
+        $this->categories = Category::all();
+    }
+
+
+    public function home()
+    {
+        $data['catList'] = $this->categories;
+        $data['siteList'] = Site::getAllStores();
+        $coupons['listcoupons'] = Coupon::getCouponLimit();
+        return view('front_end.pages.home.home', $data, $coupons);
     }
 }
