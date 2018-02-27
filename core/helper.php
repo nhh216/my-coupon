@@ -1,8 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nhh21
- * Date: 2/27/2018
- * Time: 9:49 AM
- */
-define(a,12);
+
+function subMenu($data,$id)
+{
+    $baseURl = asset('/');
+    foreach ($data as $item)
+    {
+        if($item['parent_id'] == $id)
+        {
+            echo '<li  class="dropdown-menu-2" ><a href=';
+            echo $baseURl.$item['slug'].'>'.$item['name'].'</a>';
+            subMenu($data,$item['id']);
+            echo '</li>';
+        }
+    }
+}

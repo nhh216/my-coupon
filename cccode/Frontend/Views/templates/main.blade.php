@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <title> DORE || {{ $title or '' }}</title>
-    @include('includes.scripts_top')
-    @include('includes.scripts_search')
+    @include('front_end::includes.scripts_top')
+    @include('front_end::includes.scripts_search')
     @stack('head')
 </head>
-    @include('cpn.comment_fb')
+    @include('front_end::cpn.comment_fb')
 <body>
-    @include('layout.header_home_content')
+    @include('front_end::layout.header_home_content')
 
     <div class="section wb">
 
             {{--Slider--}}
-            @includeWhen([$hasSlider],'layout.slider')
+            @includeWhen([$hasSlider],'front_end::layout.slider')
             {{--Content--}}
             @yield('content')
             {{-- Sidebar--}}
@@ -22,6 +22,6 @@
     </div>
 
 </body>
-    @include('includes.scripts_bottom')
+    @include('front_end::includes.scripts_bottom')
     @stack('tail')
 </html>

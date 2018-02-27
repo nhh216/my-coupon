@@ -27,6 +27,6 @@ class HomeController extends  Controller
         $data['catList'] = $this->categories;
         $data['siteList'] = Site::getAllStores();
         $coupons['listcoupons'] = Coupon::getCouponLimit();
-        return view('front_end.pages.home.home', $data, $coupons);
+        return view('front_end::pages.home.home', $data, $coupons);
     }
 }

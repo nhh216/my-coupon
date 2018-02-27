@@ -9,13 +9,15 @@
                     </div><!-- end navbar-header -->
                 </div>
                 <div class="col-md-4">
-                    @include('front_end.layout.search')
+
+                    @include('front_end::layout.search')
+
                 </div>
             </div>
     </div>
 </div>
     <div id="wrapper">
     <div class="header">
-        @include('front_end.layout.menu')
+        @include('front_end::layout.menu')
     </div><!-- end header -->
 

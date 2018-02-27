@@ -15,10 +15,10 @@ class ModuleProvider extends ServiceProvider
     public function boot()
     {
         $string = 'C:\xampp\htdocs\mycoupon\cccode/Frontend/route.php';
-        $urlView = 'C:\xampp\htdocs\mycoupon\cccode';
+        $Viewpath = 'C:\xampp\htdocs\mycoupon\cccode/';
 //        dd($string);
         $this->loadRoutesFrom($string);
-        $this->loadViewsFrom($urlView .'Frontend/Views', 'front_end');
+        $this->loadViewsFrom($Viewpath .'Frontend/Views', 'front_end');
 //        dd  ($urlView .'/Frontend/Views');
     }
     public function register()
