@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Core\Console\Commands;
 
-use App\Models\Category_Coupon;
+use Core\Models\Category_Coupon;
 use Illuminate\Console\Command;
-use App\Models\Coupon;
-use App\Models\Site;
-use App\Models\Category;
+use Core\Models\Coupon;
+use Core\Models\Site;
+use Core\Models\Category;
 use Excel;
 use GuzzleHttp\Client;
 use DateTime;

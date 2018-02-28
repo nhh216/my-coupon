@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Core\Models\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+
+          $this->call(CategoriesSeeder::class);
+          $this->call(SitesSeeder::class);
+//        $this->call(CouponsSeeder::class);
+//         $this->call(UserSeeder::class);
     }
 }

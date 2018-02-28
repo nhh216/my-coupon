@@ -14,6 +14,10 @@ class ModuleProvider extends ServiceProvider
 {
     public function boot()
     {
+        if(defined('LARAVEL_ADMIN'))
+        {
+
+        }
 //        $string = 'C:\xampp\htdocs\mycoupon\cccode/Frontend/route.php';
 //        $Viewpath = 'C:\xampp\htdocs\mycoupon\cccode/';
 //        dd(FRONTEND_PATH);

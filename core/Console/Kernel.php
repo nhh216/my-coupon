@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Console;
+namespace Core\Console\Commands;
 
 use Core\Console\Commands\Update_DataBase;
 use Illuminate\Console\Scheduling\Schedule;
-use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Kernel as BaseKernel;
 
-class Kernel extends ConsoleKernel
+class Kernel extends BaseKernel
 {
     /**
      * The Artisan commands provided by your application.
