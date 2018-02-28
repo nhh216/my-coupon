@@ -2,7 +2,7 @@
     $( function() {
 
         $("#typeahead_01").autocomplete({
-            source: 'http://magiamgia.vip/autocomplete',
+            source: 'http://mycoupon.xyz/autocomplete',
             select: function (event,ui) {
                 window.location.href = ui.item.url;
             }

@@ -1,16 +1,23 @@
 <?php
+define("CORE_PATH",realpath(__DIR__)."/");
+//define("FRONTEND_PATH",realpath('C:\xampp\htdocs\mycoupon\cccode')."/");
+define("FRONTEND_PATH",realpath(CORE_PATH. "../cccode")."/");
 
-function subMenu($data,$id)
+if (!function_exists('subMenu'))
 {
-    $baseURl = asset('/');
-    foreach ($data as $item)
+    function subMenu($data,$id)
     {
-        if($item['parent_id'] == $id)
+        $baseURl = asset('/');
+        foreach ($data as $item)
         {
-            echo '<li  class="dropdown-menu-2" ><a href=';
-            echo $baseURl.$item['slug'].'>'.$item['name'].'</a>';
-            subMenu($data,$item['id']);
-            echo '</li>';
+            if($item['parent_id'] == $id)
+            {
+                echo '<li  class="dropdown-menu-2" ><a href=';
+                echo $baseURl.$item['slug'].'>'.$item['name'].'</a>';
+                subMenu($data,$item['id']);
+                echo '</li>';
+            }
         }
     }
 }
+
