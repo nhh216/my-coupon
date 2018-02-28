@@ -5,8 +5,6 @@
  * Date: 2/27/2018
  * Time: 9:47 AM
  */
-use Frontend\Models\Category;
-
 
 Route::group(['namespace' => 'Frontend\Controllers', 'prefix' => '/', 'middleware' => ['web'] ], function () {
     Route::get('/','HomeController@home');
@@ -25,5 +23,7 @@ Route::group(['namespace' => 'Frontend\Controllers', 'prefix' => '/', 'middlewar
         'as'=>'autocomplete',
         'uses'=>'HomeController@autocomplete'
     ]);
+
+    Route::get('/d','HomeController@d');
 
 });
