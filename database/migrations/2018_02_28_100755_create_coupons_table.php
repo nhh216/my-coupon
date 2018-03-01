@@ -8,7 +8,6 @@ class CreateCouponsTable extends Migration
 {
     public function up()
     {
-        Schema::dropIfExists('coupons');
         Schema::create('coupons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->unique();
@@ -17,7 +16,7 @@ class CreateCouponsTable extends Migration
             $table->integer('site_id')->nullable();
             $table->integer('type')->nullable();
             $table->string('link_offer',1000)->nullable();
-            $table->string('description')->nullable();
+            $table->string('description',1000)->nullable();
             $table->string('exp_date')->nullable();
             $table->string('thumb')->nullable();
             $table->integer('views')->nullable();

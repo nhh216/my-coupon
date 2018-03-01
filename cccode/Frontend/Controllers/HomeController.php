@@ -146,9 +146,10 @@ class HomeController extends  Controller
                 }
             }
         }
-//        dd($arr);
+
         Coupon::insertIntoCoupons($arr);
     }
+
 
 
 }

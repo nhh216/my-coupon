@@ -13,7 +13,6 @@ class CreateSitesTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('sites');
         Schema::create('sites', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
