@@ -7,9 +7,13 @@
  */
 
 namespace Core\Admin\Controllers;
+use App\Http\Controllers\Controller;
 
-
-class AdminController
+class AdminController extends  Controller
 {
 
+    public function a()
+    {
+        return "adfadf";
+    }
 }

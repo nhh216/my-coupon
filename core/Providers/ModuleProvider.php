@@ -16,14 +16,24 @@ class ModuleProvider extends ServiceProvider
     {
         if(defined('LARAVEL_ADMIN'))
         {
+            if(LARAVEL_ADMIN)
+            {
+                require_once CORE_PATH . 'Admin/helper.php';
+                $this->loadRoutesFrom(CORE_PATH.'Admin/route.php');
+                $this->loadViewsFrom(CORE_PATH. 'Admin/Views','backend');
+                $this->loadViewsFrom(CORE_PATH.'Admin/Auth','auth');
+            }
+            else
+            {
+                require_once FRONTEND_PATH .'Frontend/helper.php';
+                $this->loadRoutesFrom(FRONTEND_PATH . 'Frontend/route.php');
+                $this->loadViewsFrom(FRONTEND_PATH .'Frontend/Views', 'front_end');
+            }
 
         }
-//        $string = 'C:\xampp\htdocs\mycoupon\cccode/Frontend/route.php';
-//        $Viewpath = 'C:\xampp\htdocs\mycoupon\cccode/';
-//        dd(FRONTEND_PATH);
-        $this->loadRoutesFrom(FRONTEND_PATH . 'Frontend/route.php');
-        $this->loadViewsFrom(FRONTEND_PATH .'Frontend/Views', 'front_end');
-//        dd  ($urlView .'/Frontend/Views');
+
+
+
     }
     public function register()
     {

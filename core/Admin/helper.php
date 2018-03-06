@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nhh21
- * Date: 2/28/2018
- * Time: 2:26 PM
- */
+
+if (!function_exists('backend_url')) {
+    function backend_url($module, $item = '')
+    {
+        $slug = strtolower($module . '/' . str_replace('_', '/', $item));
+        return url($slug);
+    }
+}
