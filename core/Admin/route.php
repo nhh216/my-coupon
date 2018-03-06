@@ -11,3 +11,7 @@ Route::group(['namespace' => 'Core\Controllers', 'prefix' => '/','middleware'=>[
 //    })->name('backend');
 
 });
+Route::get('/',function(){
+
+    return "ádfasdf";
+});
